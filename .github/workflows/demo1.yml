@@ -6,14 +6,14 @@ on:
       - closed
     branches:
       - main
-      - 'feature**''
-      - 'pull**''
+      - 'feature**'
+      - 'pull**'
   workflow_dispatch:
   push:
     branches:
       - main
-      - 'feature**''
-      - 'pull**''
+      - 'feature**'
+      - 'pull**'
     paths-ignore:
       - '.github/*'
     
