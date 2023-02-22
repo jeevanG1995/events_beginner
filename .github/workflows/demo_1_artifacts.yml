@@ -47,6 +47,8 @@ jobs:
       - name: check folder contents
         run: ls
       - name: print output
-        run: echo "${{needs.outputs.step-output}}"
+        run: |
+          echo '${{needs.outputs}}'
+          echo '${{needs.build.outputs.step-output}}'
       - name: Deploy
         run: echo "Deploying..."
