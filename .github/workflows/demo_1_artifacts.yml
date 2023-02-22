@@ -19,7 +19,7 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     outputs:
-      step-output: ${{steps.store_output.outputs.step-output}}
+      step-output: ${{steps.publish.outputs.step-output}}
     steps:
       - name: Get code
         uses: actions/checkout@v3
@@ -28,6 +28,7 @@ jobs:
       - name: Build website
         run: npm run build
       - name: store_output
+        id: publish
         run: find dist/assets/*.js -type f -execdir echo 'step-output={}' >> $GITHUB_OUTPUT ';'
       - name: upload artifacts
         uses: actions/upload-artifact@v3
